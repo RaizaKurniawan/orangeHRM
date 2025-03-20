@@ -27,8 +27,13 @@ Preperation for run test
 ```
 Create .env file
 
+URL = 
+
 Create config.py 
 
+username = 
+
+password =
 
 ## Running Test
 
