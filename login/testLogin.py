@@ -29,4 +29,12 @@ def run_test():
         print("\nTesting Negative Case: Invalid Login")
         try_login(page, config.INVALID_USER["username"], config.INVALID_USER["password"])
         # Check for error message
-        if page.locator(".oxd-text=Invalid Credential")
+        if page.locator(".oxd-text=Invalid Credential").is_visible():
+            print("✅ Negative Test Passed: Login failed as expected!")
+        else:
+            print("❌ Negative Test Failed: No error message found.")
+
+        browser.close()
+
+if __name__ == "__main__":
+    run_test()
