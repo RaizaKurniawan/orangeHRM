@@ -1,7 +1,7 @@
 
 # OrangHRM Automation 
 
-OrangHRM with playwright and pyhton
+OrangHRM with playwright and python
 
 
 
