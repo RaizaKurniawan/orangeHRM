@@ -1,7 +1,7 @@
 import re
 from playwright.sync_api import Page, expect, sync_playwright
 from dotenv import load_dotenv
-import os, config
+import os, config.config as config
 
 load_dotenv()
 url = os.getenv('URL')

@@ -1,5 +1,9 @@
-from playwright.sync_api import sync_playwright
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "config")))
 import config
+
+from playwright.sync_api import Page, expect, sync_playwright
 
 def try_login(page, username, password):
     page.goto(config.URL)
@@ -18,8 +22,8 @@ def run_test():
         #Positive Test: Valid Login
         print("Testing Positive Case: Valid Login")
         try_login(page, config.VALID_USER["username"], config.VALID_USER["password"])
-        if page.locator(".oxd-text=Dashboard").is_visible():
-            print("✅ Positive Test Passed: Logged in successfully!")
+        if page.locator(".oxd-text").filter(has_text="Dashboard").is_visible():
+            print("✅ Dashboard found!")
         else:
             print("❌ Positive Test Failed: No dashboard found.")
         # Go back to login page
